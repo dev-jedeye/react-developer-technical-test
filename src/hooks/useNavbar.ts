@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-interface Navbar {
+export interface Navbar {
   id: string;
   label: string;
 }
@@ -12,7 +12,7 @@ export const useNavbar = () => {
   const category = React.useMemo(() => {
     if (!router.query.category) return "top";
 
-    return router.query.category;
+    return router.query.category as string;
   }, [router.query.category]);
 
   const navs = React.useMemo(() => {
@@ -62,8 +62,6 @@ export const useNavbar = () => {
 
   const handleClick = React.useCallback(
     (nav: Navbar) => {
-      console.log(nav);
-
       router.push({
         pathname: router.pathname,
         query: { ...router.query, category: nav.id },

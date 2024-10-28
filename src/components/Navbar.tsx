@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { isDesktop } from "react-device-detect";
 
 import React from "react";
+import { NavbarItem } from "./NavbarItem";
 
 export const Navbar = () => {
   const { navs, category, handleClick } = useNavbar();
@@ -24,13 +25,12 @@ export const Navbar = () => {
       <div className={`${!isDesktop && !isShow && "hidden"}`}>
         <div className="navbar">
           {navs.map((nav, idx) => (
-            <div
-              onClick={() => handleClick(nav)}
-              className={`item ${category === nav.id && "active"}`}
+            <NavbarItem
               key={`${idx}-${nav.label}`}
-            >
-              {nav.label}
-            </div>
+              category={category}
+              handleClick={handleClick}
+              nav={nav}
+            />
           ))}
         </div>
       </div>
