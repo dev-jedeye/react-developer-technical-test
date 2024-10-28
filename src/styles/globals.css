@@ -154,9 +154,6 @@ body {
   position: absolute;
   padding: 5px 10px;
   border-radius: 5px;
-  top: 10px;
-  right: -30px;
-  transform: rotate(45deg);
   font-weight: bold;
   font-size: 14px;
   width: 100px;
@@ -165,9 +162,15 @@ body {
 .ribbon-new {
   background-color: #48c774;
   color: white;
+  top: 10px;
+  right: -30px;
+  transform: rotate(45deg);
 }
 
 .ribbon-top {
   background-color: #db0a0a;
   color: white;
+  top: 10px;
+  left: -30px;
+  transform: rotate(-45deg);
 }

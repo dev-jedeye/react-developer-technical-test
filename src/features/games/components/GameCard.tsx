@@ -14,8 +14,8 @@ export const GameCard = ({ game }: Props) => {
 
   return (
     <div className="card">
-      {isTop && isNew && <span className="ribbon ribbon-new">NEW</span>}
-      {isTop && !isNew && <span className="ribbon ribbon-top">TOP</span>}
+      {isNew && <span className="ribbon ribbon-new">NEW</span>}
+      {isTop && <span className="ribbon ribbon-top">TOP</span>}
       <Image
         src={convertImageUrl(game.image)}
         alt={game.id}
